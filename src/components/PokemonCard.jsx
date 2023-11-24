@@ -1,38 +1,23 @@
 import React from "react";
 
-const PokemonCard = () => {
-    const pokemon = 
-        {
-          name: "bulbasaur",
-          imgSrc:
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-        }
-
+const PokemonCard = ({ pokemon }) => {
+    console.log(pokemon);
+    
+    const { imgSrc, name } = pokemon;
 
     return (
         <>
         <figure>
-            {pokemon.imgSrc ? (
-                <img src={pokemon.imgSrc} alt={pokemon.name} />
+            {imgSrc ? (
+                <img src={imgSrc} alt={name} />
             ) : (
                 <p>???</p>
             )}
-            <figcaption>{pokemon.name}</figcaption>
+            <figcaption>{name}</figcaption>
         </figure>
         </>
     );
 }
-
-/*const pokemonList = [
-    {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "mew",
-    },
-  ];*/
 
 
 
