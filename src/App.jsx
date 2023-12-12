@@ -7,6 +7,9 @@ const App = () => {
 
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
+  const handleClick = (index) => {
+    setPokemonIndex(index);
+  }
 
   const pokemonList = [
     {
@@ -38,7 +41,7 @@ const App = () => {
     
       <div>
         <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-        <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList} />
+        <NavBar pokemonList={pokemonList} onPokemonClick={handleClick} key={pokemonList.name} />
       </div>
     );
 }
